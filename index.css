@@ -23,7 +23,8 @@ body {
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .nav-item {
@@ -31,6 +32,16 @@ body {
   display: inline-block;
   margin: 0 8rem;
   padding: 2rem;
+}
+
+.logo {
+  justify-self: flex-start;
+  margin-right: auto;
+  color: white;
+  display: inline-block;
+  font-size: 3rem;
+  padding: 2rem;
+  font-family: "Kaushan Script", cursive;
 }
 
 .nav-item:hover {
@@ -49,6 +60,7 @@ h1 {
   position: absolute;
   z-index: 1;
   top: 20%;
+  animation: moveInRight 3s ease-out;
 }
 
 .hero-image {
@@ -58,6 +70,31 @@ h1 {
   width: 100vw;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   opacity: 0.8;
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBtn {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 .button-container {
